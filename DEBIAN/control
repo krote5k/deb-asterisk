@@ -4,7 +4,7 @@ Section: comm
 Installed-Size: 28784
 Maintainer: Dmitriy Q <dmitry@atsip.ru>
 Architecture: amd64
-Version: 16.18.0-atsip15
+Version: 16.19.0-atsip19
 Depends: adduser, libc6, libcap2, libedit2, libgcc1, libjansson4, libpopt0, libsqlite3-0, libssl1.1, libsystemd0, liburiparser1, libuuid1, libxml2, libxslt1.1, lsb-base
 Provides: asterisk
 Conflicts: libspeex1
@@ -12,4 +12,3 @@ Description: Open Source Private Branch Exchange (PBX)
  Open Source Private Branch Exchange (PBX)
  Asterisk is an Open Source PBX and telephony toolkit. It is, in a sense, middleware between Internet and telephony channels on the bottom, and Internet and telephony applications at the top.
  Asterisk can be used with Voice over IP (SIP, H.323, IAX and more) standards, or the Public Switched Telephone Network (PSTN) through supported hardware.
-
