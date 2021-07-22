@@ -1,0 +1,6 @@
+/etc/asterisk/asterisk.conf
+/etc/asterisk/logger.conf
+/etc/asterisk/modules.conf
+/etc/asterisk/pjsip_notify.conf
+/etc/default/asterisk
+/etc/init.d/asterisk

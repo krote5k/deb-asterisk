@@ -1,0 +1,35 @@
+#!/bin/bash
+
+gr=$(grep -c ^asterisk /etc/group)
+us=$(grep -c asterisk /etc/passwd)
+if [ $gr -eq 0 ]
+then
+    groupadd asterisk
+    echo 'Group asterisk added'
+else
+    echo 'Group asterisk is exist'
+fi
+
+if [ $us -eq 0 ]
+then
+    useradd -r -d /var/lib/asterisk -g asterisk asterisk
+    usermod -aG audio,dialout asterisk
+    echo 'User asterisk added'
+else
+    echo 'User asterisk is exist'
+fi
+chown -R asterisk. /var/run/asterisk
+chown -R asterisk.asterisk /etc/asterisk
+chown -R asterisk.asterisk /var/{lib,log,spool}/asterisk
+chown -R asterisk.asterisk /usr/lib/asterisk
+
+systemctl enable asterisk
+
+st=$(systemctl status asterisk | grep -c "active (running)")
+
+if [ $st -eq 0 ]
+then
+    systemctl start asterisk
+else
+    echo 'Asterisk is already running'
+fi

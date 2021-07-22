@@ -1,2 +1,5 @@
 # deb-asterisk
-Файлы для сборки deb-пакета Asterisk
+
+Файлы для (пере)сборки deb-пакета Asterisk
+
+[Мануал пересборки](http://sysadm.pp.ua/linux/deb-creation-edit.html)

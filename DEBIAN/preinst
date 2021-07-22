@@ -1,0 +1,20 @@
+#!/bin/bash
+
+gr=$(grep -c ^asterisk /etc/group)
+us=$(grep -c asterisk /etc/passwd)
+if [ $gr -eq 0 ]
+then
+    groupadd asterisk
+    echo 'Group asterisk added'
+else
+    echo 'Group asterisk is exist'
+fi
+
+if [ $us -eq 0 ]
+then
+    useradd -r -d /var/lib/asterisk -g asterisk asterisk
+    usermod -aG audio,dialout asterisk
+    echo 'User asterisk added'
+else
+    echo 'User asterisk is exist'
+fi

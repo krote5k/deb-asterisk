@@ -1,0 +1,11 @@
+/etc/asterisk
+/etc/init.d
+/etc/logrotate.d
+/usr/include/asterisk
+/usr/lib/asterisk/modules
+/usr/lib/pkgconfig
+/usr/sbin
+/usr/share/doc/asterisk
+/usr/share/man/man8
+/var/lib/asterisk
+/usr/sbin/rasterisk

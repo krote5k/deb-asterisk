@@ -1,0 +1,56 @@
+asterisk (16.19.0-atsip18) stable; urgency=medium
+
+  * Релиз 16.19.0
+
+-- Dmitriy Q <dmitry@atsip.ru>  Thu, 22 Jul 2021 10:05:00 +0500
+
+asterisk (16.18.0-atsip15) stable; urgency=medium
+
+  * Мелкие поправки по lintian
+
+-- Dmitriy Q <dmitry@atsip.ru>  Mon, 8 Jun 2021 16:05:00 +0500
+
+asterisk (16.18.0-atsip14) stable; urgency=medium
+
+  * Мелкие поправки по созданию пакетов
+    Вернулся к старой версии конфигов
+
+-- Dmitriy Q <dmitry@atsip.ru>  Mon, 8 Jun 2021 14:08:00 +0500
+
+asterisk (16.18.0-atsip13) stable; urgency=medium
+
+  * edit logrotate:
+    поправлены абсолютные пути
+  * Сборка пакета:
+    Конфиги перенесены в каталог DEBIAN
+
+-- Dmitriy Q <dmitry@atsip.ru>  Mon, 8 Jun 2021 12:45:00 +0500
+
+asterisk (16.18.0-atsip11) stable; urgency=medium
+
+  * edit postinst:
+    Мелкие поправки на проверки создания группы/пользователя
+    asterisk и добавление автозапуска
+
+-- Dmitriy Q <dmitry@atsip.ru>  Mon, 7 Jun 2021 16:40:11 +0500
+
+asterisk (16.18.0-atsip09) stable; urgency=medium
+
+  * add /etc/init.d/asterisk
+	from the source code
+    /etc/default/asterisk
+        AST_USER="asterisk"
+        AST_GROUP="asterisk"
+    /etc/logrotate.d/asterisk
+	from the source code
+
+  * edit postinst:
+    groupadd asterisk
+    useradd -r -d /var/lib/asterisk -g asterisk asterisk
+    usermod -aG audio,dialout asterisk
+    chown asterisk. /var/run/asterisk
+    chown -R asterisk.asterisk /etc/asterisk
+    chown -R asterisk.asterisk /var/{lib,log,spool}/asterisk
+    chown -R asterisk.asterisk /usr/lib/asterisk
+
+-- Dmitriy Q <dmitry@atsip.ru>  Mon, 7 Jun 2021 14:40:11 +0500
